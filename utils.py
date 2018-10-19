@@ -1,3 +1,8 @@
+from pyspark import SparkContext
+
+def setup_spark_context():
+    return SparkContext("local", "NASA Data Set Analysis")
+
 def export_query_to_csv(data_frame, file_name):
     data_frame.coalesce(1).write.mode('overwrite').csv('results/' + file_name)
 
