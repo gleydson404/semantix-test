@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  ps:
+    build: ./
+    command: ./bin/pyspark
+    volumes:
+        - .:/app
