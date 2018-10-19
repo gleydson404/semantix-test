@@ -1,5 +1,9 @@
 # Semantix Test
-This repository is a challenge sended by Semantix. The objective of this challenge, is analyse and extract information from [NASA request datasetl](http://ita.ee.lbl.gov/html/contrib/NASA-HTTP.html).
+This repository is a challenge sended by Semantix.
+The objective of this challenge, is analyse and extract information from [NASA request datasetl](http://ita.ee.lbl.gov/html/contrib/NASA-HTTP.html).
+There is two datasets on this link, i opted to handle one by execution. So, if wich to execute the
+script to check results from both, stay tuned on 'results' folder, because all folders and files there
+can be overwritten.
 
 
 ### Installation
@@ -16,6 +20,10 @@ or
 dcr --rm ps bash
 ```
 If you dont use OH-MY-ZSH with docker compose plugin, the firt one will not work.
+
+
+### Execution
+
 
 Once you are in docker bash opened by the last command, you should run:
 
@@ -47,7 +55,7 @@ In red, are informations that did not belongs to the challenge, but its a plus.
 Also, there is some questions on the Test. To see this go to TEST_ANSWERS.md. Those answers are in PT-BR because the test is in PT-BR.
 
 I hope you liked.
-Feel free to create a issue if you want.
+Feel free to create a issue, if you want.
 
 Regards.
 
