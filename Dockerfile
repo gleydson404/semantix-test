@@ -23,9 +23,6 @@ RUN pip3 install --upgrade pip
 # Installing IPython
 RUN pip install ipython
 
-# Installing IPdb
-RUN pip install ipdb
-
 
 # GENERAL DEPENDENCIES
 
