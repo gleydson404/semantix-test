@@ -30,7 +30,7 @@ def main(log_file):
 
     data_frames['unique_hosts'] = splited_data_frame.groupBy('host').count().filter('count = 1').select('host')
 
-    data_frames['top_20_request'] = splited_data_frame.groupBy('request').count().sort(desc( "count" ))
+    data_frames['top_20_request'] = splited_data_frame.groupBy('request').count().sort(desc( "count")).limit(5)
 
     data_frames['total_http_404'] = splited_data_frame.groupBy('http_status').count().filter('http_status = "404"')
 
