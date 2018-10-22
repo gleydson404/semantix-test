@@ -58,11 +58,31 @@ The highlighted items, are informations that did not belongs to the challenge, b
 
 Also, there is some questions on the Test. To see this go to TEST_ANSWERS.md. Those answers are in PT-BR because the test is in PT-BR.
 
+## Execution in  Jupter Notebook
+
+It's very recommended that you take a look on `nasa_analysis.ipynb`. On this file, there is a step
+by step about how the code in the script works, and another cool things like charts for some
+informations extracted.
+
+To run jupyter notebook:
+
+```
+docker-compose build psnb
+```
+
+and after:
+
+```
+docker-compose up psnb
+```
+
+then pick `nasa_analysis.ipynb` and have fun.
+
 I hope you liked.
 
 Feel free to create a issue, if you want.
 
-Regards.
+**Regards!**
 
 
 
