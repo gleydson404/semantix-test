@@ -21,9 +21,6 @@ and then:
 docker-compose run --rm ps bash
 ```
 
-If you don't use OH-MY-ZSH with docker compose plugin, the last one will not work.
-
-
 ### Execution
 
 
