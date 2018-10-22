@@ -1,28 +1,53 @@
 FROM java:8-jdk-alpine
-
+RUN sed -i -e 's/v3\.4/v3.5/' /etc/apk/repositories
 # PYTHON 3
 
-ENV PYTHON_VERSION 3.4.3-r2
-ENV ALPINE_OLD_VERSION 3.2
+# ENV PYTHON_VERSION 3.4.3-r2
+# ENV ALPINE_OLD_VERSION 3.4
 # Hack: using older alpine version to install specific python version
-RUN sed -n \
-    's|^http://dl-cdn\.alpinelinux.org/alpine/v\([0-9]\+\.[0-9]\+\)/main$|\1|p' \
-    /etc/apk/repositories > curr_version.tmp && \
-    sed -i 's|'$(cat curr_version.tmp)'/main|'$ALPINE_OLD_VERSION'/main|' \
-    /etc/apk/repositories
+# RUN sed -n \
+#     's|^http://dl-cdn\.alpinelinux.org/alpine/v\([0-9]\+\.[0-9]\+\)/main$|\1|p' \
+#     /etc/apk/repositories > curr_version.tmp && \
+#     sed -i 's|'$(cat curr_version.tmp)'/main|'$ALPINE_OLD_VERSION'/main|' \
+#     /etc/apk/repositories
 # Installing given python3 version
-RUN apk update && \
-    apk add python3=$PYTHON_VERSION
+# RUN apk update && \
+#     apk add python3
 # Reverting hack
-RUN sed -i 's|'$(cat curr_version.tmp)'/main|'$ALPINE_OLD_VERSION'/main|' \
-    /etc/apk/repositories && \
-    rm curr_version.tmp
+# RUN sed -i 's|'$(cat curr_version.tmp)'/main|'$ALPINE_OLD_VERSION'/main|' \
+#     /etc/apk/repositories && \
+#     rm curr_version.tmp
 # Upgrading pip to the last compatible version
-RUN pip3 install --upgrade pip
 
+
+RUN set -e; \
+        apk add --no-cache --virtual .build-deps \
+                gcc \
+                g++ \
+                libc-dev \
+                linux-headers \
+                mariadb-dev \
+                python3-dev \
+                postgresql-dev \
+                freetype-dev \
+                libpng-dev \
+                libxml2-dev \
+                libxslt-dev \
+                zlib-dev \
+        ;
+
+RUN apk update && \
+    apk add python3
+
+RUN pip3 install --upgrade pip
 # Installing IPython
 RUN pip install ipython
 
+RUN pip install matplotlib
+
+RUN pip install jupyter
+
+RUN pip install findspark
 
 # GENERAL DEPENDENCIES
 
