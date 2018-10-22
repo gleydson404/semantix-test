@@ -64,6 +64,11 @@ It's very recommended that you take a look on `nasa_analysis.ipynb`. On this fil
 by step about how the code in the script works, and another cool things like charts for some
 informations extracted.
 
+**ATTENTION**: The datasets have both more than 150MB, so i didn't add them to this repository. In the
+point that you load the dataset do spark, you need to create a folder called `data` in this
+directory and put the datasets inside. With this, you can see all the analysis on jupter notebook.
+
+
 To run jupyter notebook:
 
 ```
@@ -83,6 +88,4 @@ I hope you liked.
 Feel free to create a issue, if you want.
 
 **Regards!**
-
-
 
