@@ -11,11 +11,14 @@ Once you have cloned this repository, you just need to install [Docker](https://
 After install and configure Docker, you should run:
 
 ```
+docker-compose build ps
+```
+
+and then:
+
+
+```
 docker-compose run --rm ps bash
-```
-or
-```
-dcr --rm ps bash
 ```
 
 If you don't use OH-MY-ZSH with docker compose plugin, the last one will not work.
